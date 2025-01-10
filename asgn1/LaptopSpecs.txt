@@ -1,0 +1,12 @@
+CPU		Intel i3-8130U
+Sockets		1
+Cores		2
+Processors	4
+Frequency	2.21 GHz Base, 3.4GHz Max
+GPU		Integrated Intel UHD Graphics 620
+L1 Cache	128KB
+L2 Cache	215KB
+L3 Cache	4MB
+RAM		8GB DDR4
+Disk		1TB HDD (SATA) + 256GB SSD (NVMe)
+Battery		4 cell Lithium-ion, 2200mAh

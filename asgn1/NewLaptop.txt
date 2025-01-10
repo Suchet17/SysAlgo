@@ -1,0 +1,1 @@
+Since I have in interest in Programming and Computational Biology, I would look for a laptop with at least 16GB RAM and a CPU with a high processor frequency for fast execution of code. I would not need a dedicated GPU, so a low-end integrated graphics card could serve my purposes. I would also look for laptops with at least 1TB SSD storage. An ethernet port would be useful.
