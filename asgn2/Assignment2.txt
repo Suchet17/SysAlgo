@@ -1,0 +1,17 @@
+Functions for Insertion Sort, Selection Sort and Merge Sort are implemented in 'sortingAlgorithms.cpp'.
+The main function calls each sort function 20 times (for 20 input permutations) for sizes from 1 to 1000.
+From each permutation, the code reads the first 'size' lines.
+20 permutations of numbers from 1 to 1000 are stored in text files and are the inputs for the sorting functions.
+The running time for each algorithm is averaged over 20 inputs and stored in a text file.
+
+A python code was used to read and plot the running time for each algorithm. The SciPy library's curve_fit function was used to find the complexity expression for the algorithms using the model function a*n^2 + b*n + c for Insertion sort and Selection sort, and a*n*logn + b for Merge sort.
+
+This gave the expressions:
+Selection Sort:	S(n) = 1.04177e-9*n^2 + 1.54994e-7*n + 9.23552e-6
+Insertion Sort:	I(n) = 6.88402e-10*n^2 + 3.05903e-9*n + 2.91105e-6
+Merge Sort:	M(n) = 1.19758e-8*n*log(n) + 5.04325e-6
+
+Using these expressions for time complexity, the maximum length array that can be sorted in 5 minutes is:
+Selection Sort:	    536,555
+Insertion Sort:	    660,143
+Merge Sort: 	844,761,079
