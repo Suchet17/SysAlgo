@@ -90,11 +90,45 @@ void mergeSort(int a[], int left, int right){
   merge(a, left, mid, right);
 }
 
+int partition(int a[], int left, int right){
+  int pivot = a[right];
+  int i = left-1;
+  for(int j = left; j < right; j++){
+    if (a[j] <= pivot){
+      i++;
+      int temp = a[i];
+      a[i] = a[j];
+      a[j] = temp;
+    }
+  }
+  i++;
+  int temp = a[i];
+  a[i]=a[right];
+  a[right]=temp;
+  return i;
+}
+
+void quickSort(int a[], int left, int right){
+  if(left >= right)
+    return;
+  int p = partition(a, left, right);
+  quickSort(a, left, p-1);
+  quickSort(a, p+1, right);
+}
+
+void randomQuickSort(int a[], int left, int right){
+  if(left >= right)
+    return;
+  int p = partition(a, left, right);
+  quickSort(a, left, p-1);
+  quickSort(a, p+1, right);
+}
+
 int main() {
   int num_iter = 20;
   int max_size = 1000;
   ofstream myFile;
-  myFile.open("SelectionSortTimes.txt");
+  myFile.open("RandomQuickSortTimes.txt");
   for(int size = 1; size <= max_size; size++){ //loop over input sizes
     double t=0;
     for (int iter = 1; iter <= num_iter; iter++){ //different inputs for each size
@@ -120,7 +154,7 @@ int main() {
       
       //Sort and add time
       auto start = std::chrono::high_resolution_clock::now();
-      selectionSort(arr, size);
+      randomQuickSort(arr, 0, size-1);
       auto end = std::chrono::high_resolution_clock::now();
       std::chrono::duration<double> duration = end - start;
       t = t + duration.count();
